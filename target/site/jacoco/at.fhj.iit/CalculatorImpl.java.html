@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CalculatorImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Calculator</a> &gt; <a href="index.source.html" class="el_package">at.fhj.iit</a> &gt; <span class="el_source">CalculatorImpl.java</span></div><h1>CalculatorImpl.java</h1><pre class="source lang-java linenums">package at.fhj.iit;
+
+/**
+ * Calcuator Implementation of common mathematical operations
+ */
+public class CalculatorImpl implements Calculator {
+	
+	/**
+	 * Easy Calculator for first steps in test automation for Educational Usage
+	 */
+<span class="fc" id="L11">	public CalculatorImpl(){</span>
+		
+<span class="fc" id="L13">	}</span>
+
+	// TODO implement addition methods
+	// TOOD test those new added implementations too (!)
+
+
+	/**
+	 * Calculates &lt;b&gt;Sum&lt;/b&gt; of two numbers
+	 * @param number1
+	 * @param number2
+	 * @return sum of number1 + number2
+	 */
+	@Override
+	public double add(double number1, double number2){
+<span class="fc" id="L27">		return number1 + number2;</span>
+	}
+
+	/**
+	 * Calculates &lt;b&gt;Difference&lt;/b&gt; of two numbers
+	 * @param number1
+	 * @param number2
+	 * @return diff of number1 - number2
+	 */
+	@Override
+	public double minus(double number1, double number2){
+<span class="fc" id="L38">		return number1 - number2;</span>
+	}
+
+	/**
+	 * Calculates &lt;b&gt;Quotient&lt;/b&gt; of two numbers
+	 * @param number1
+	 * @param number2
+	 * @return quotient of number1 / number2
+	 */
+	@Override
+	public double divide(double number1, double number2){
+<span class="fc" id="L49">		double quotient = number1 / number2;</span>
+<span class="pc bpc" id="L50" title="1 of 4 branches missed.">		if(Double.isNaN(quotient) || Double.isInfinite(quotient))</span>
+<span class="fc" id="L51">			throw new ArithmeticException(&quot;Division &quot; + number1 + &quot; / &quot; +number2 +&quot; isn't possible&quot;);</span>
+<span class="fc" id="L52">		return number1 / number2;</span>
+	}
+
+	/**
+	 * Calculates &lt;b&gt;Product&lt;/b&gt; of two numbers
+	 * @param number1
+	 * @param number2
+	 * @return product of number1 x number2
+	 */
+	@Override
+	public double multiply(double number1, double number2){
+<span class="fc" id="L63">		return number1 * number2;</span>
+	}
+
+	/**
+	 * Calculates &lt;b&gt;faculty&lt;/b&gt; of any number from 1 to n, e.g. 1 x 2 x 3 x 4 ... x n
+	 *
+	 * @param number
+	 * @return
+	 */
+	public int faculty(int number){
+<span class="fc" id="L73">		int f = 1;</span>
+<span class="fc bfc" id="L74" title="All 2 branches covered.">		for(int i = number; i &gt; 0; i--){</span>
+<span class="fc" id="L75">			f = f * i;</span>
+		}
+<span class="fc" id="L77">		return f;</span>
+	}
+
+	/**
+	 * Calculates &lt;b&gt;sum of all natural numbers&lt;/b&gt; from 1 to n by using Gauss' formula
+	 *
+	 * https://de.wikipedia.org/wiki/Gau%C3%9Fsche_Summenformel
+	 * @param n least number of row from 1 to n
+	 * @return sum of all numbers from 1 to n
+	 */
+	public int sumOfNaturalNumbers(int n){
+<span class="fc" id="L88">		return (n * (n+1)) / 2;</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>
